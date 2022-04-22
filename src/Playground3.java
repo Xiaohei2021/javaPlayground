@@ -13,7 +13,7 @@ public class Playground3 {
             System.out.println("Your height is about average");
         }
         else{
-            System.out.println("Holy Molly, you are so tall");
+            System.out.println("Holy cow, you are tall");
         }
     }
 }
