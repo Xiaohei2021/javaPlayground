@@ -1,0 +1,2 @@
+public class Playground3 {
+}
