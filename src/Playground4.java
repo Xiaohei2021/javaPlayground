@@ -10,19 +10,17 @@ public class Playground4 {
 
         if (age < 16){
             System.out.println("Sowwee, but Doraemon is not here, so his pouch is not available at this moment.");
-
         }
-
-        if (age > 16 ){
+        else if (age > 16 ){
             System.out.println("Hmmm, it seems like you have out grown the need for Doraemon.");
         }
 
         System.out.println("Would you like an Ice Cream? yes/no: ");
         String reply = userInput.next();
 
-        if (reply.equals("yes")) {
+        if (age < 16 && reply.equals("yes")) {
             System.out.print("Okay, here is your yummy ice cream.");
-        } else if (reply.equals("no")) {
+        } else if (age > 16 || reply.equals("no")) {
             System.out.print("No problem, here is a cookie instead.");
         }
         else{
