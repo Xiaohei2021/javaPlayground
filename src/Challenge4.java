@@ -63,10 +63,13 @@ public class Challenge4 {
     Scanner scanner = new Scanner(System.in);
     int randomNumber = ThreadLocalRandom.current().nextInt(1, 101);
     int input;
+    int guesses= 0;
 
     do {
         System.out.print("Please enter a number between 1 -100: ");
         input = scanner.nextInt();
+
+        guesses++;
 
         if (input < 0 || input > 100){
             System.out.println("You did not pick a number between 1- 100, please try again");
@@ -82,6 +85,7 @@ public class Challenge4 {
 
         else{
             System.out.println("Hooray, Correct!");
+            System.out.println("Congrats, you guessed the number correctly in " + guesses + " tries!");
         }
     }while(input != (randomNumber));
 
