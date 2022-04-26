@@ -72,20 +72,20 @@ public class Challenge4 {
         guesses++;
 
         if (input < 0 || input > 100){
-            System.out.println("You did not pick a number between 1- 100, please try again");
+            System.out.println("You did not pick a number that is between 1- 100, please a number within the given range ");
         }
 
         else if(input > randomNumber){
-            System.out.println("Try again and guess Lower");
+            System.out.println("Close, Try guessing Lower");
         }
 
         else if(input < randomNumber){
-            System.out.println("Try again and guess higher");
+            System.out.println("Close, Try guessing higher");
         }
 
         else{
-            System.out.println("Hooray, Correct!");
-            System.out.println("Congrats, you guessed the number correctly in " + guesses + " tries!");
+            System.out.println("Hooray, the number is " + input + ". You guessed it Correctly!");
+            System.out.println("Congrats, you guessed the nu50mber correctly in " + guesses + " tries!");
         }
     }while(input != (randomNumber));
 
