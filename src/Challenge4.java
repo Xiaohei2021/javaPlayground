@@ -60,26 +60,30 @@ public class Challenge4 {
 //        for(int i = 1; i < 11; i++){
 //            System.out.println(i);
 //        }
-        Scanner scanner = new Scanner(System.in);
-        int randomNumber = ThreadLocalRandom.current().nextInt(1, 101);
-        System.out.print("Please enter a number between 1 -100: ");
-        int num = scanner.nextInt();
+    Scanner scanner = new Scanner(System.in);
+    int randomNumber = ThreadLocalRandom.current().nextInt(1, 101);
+    int input;
 
-        if (num < 0 || num > 100){
+    do {
+        System.out.print("Please enter a number between 1 -100: ");
+        input = scanner.nextInt();
+
+        if (input < 0 || input > 100){
             System.out.println("You did not pick a number between 1- 100, please try again");
-        }else{
-            do {
-                if(num > randomNumber){
-                    System.out.println("Try again and guess Lower");
-                }
-                else if(num < randomNumber){
-                    System.out.println("Try again and guess higher");
-                }
-                else{
-                    System.out.println("Hooray, Correct！！！！！");
-                }
-            }while(num != (randomNumber));
         }
+
+        else if(input > randomNumber){
+            System.out.println("Try again and guess Lower");
+        }
+
+        else if(input < randomNumber){
+            System.out.println("Try again and guess higher");
+        }
+
+        else{
+            System.out.println("Hooray, Correct!");
+        }
+    }while(input != (randomNumber));
 
     }
 }
