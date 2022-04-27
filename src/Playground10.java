@@ -1,4 +1,4 @@
-public class Javaplayground10 {
+public class Playground10 {
     public static void main(String[] args){
         double[] array1 = new double[]{ 25.92, 1.34, -76.24, 833.11, 76.084};
         String[] planets = new String[]{"earth", "moon", "sun", "jupiter", "mercury", "mars" };
