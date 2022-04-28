@@ -9,6 +9,7 @@ public class TicTacToe {
         System.out.println("Lets play a fun tic tac toe game!!");
         char[] pos = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
         char turn = 'X';
+        int currentTurn = 1;
 
 //        char[] c = 'X' || 'O';
 //        for(){}
@@ -19,8 +20,8 @@ public class TicTacToe {
         System.out.println("---+---+---");
         System.out.println(" 7 | 8 | 9 ");
 
-        do {
-//        while(true){
+//        do {
+        while(true){
 //            System.out.println("Please refer to the board above and pick a number/position to place your token");
 //            input = scanner.nextInt();
     //        if () {
@@ -39,13 +40,32 @@ public class TicTacToe {
             System.out.println("---+---+---");
             System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
 
+            if (pos[0] == turn && pos[1] == turn && pos[2] == turn ||
+                pos[3] == turn && pos[4] == turn && pos[5] == turn ||
+                pos[6] == turn && pos[7] == turn && pos[8] == turn ||
+                pos[0] == turn && pos[3] == turn && pos[6] == turn ||
+                pos[1] == turn && pos[4] == turn && pos[7] == turn ||
+                pos[2] == turn && pos[5] == turn && pos[8] == turn ||
+                pos[0] == turn && pos[4] == turn && pos[8] == turn ||
+                pos[2] == turn && pos[4] == turn && pos[6] == turn
+            ) {
+               System.out.println("Congrats, Player " + turn + " is the winner");
+               break;
+            }
+
             if (turn == 'X') {
                 turn = 'O';
             } else if (turn == 'O') {
                 turn = 'X';
             }
-//        }
-      }while( pos[i] != ' ' );
+
+            currentTurn ++;
+            if (currentTurn > 9){
+                System.out.println("Draw Game");
+            }
+
+        }
+//      }while( pos[i] != ' ' );
     }
 }
 
