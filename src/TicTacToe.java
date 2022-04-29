@@ -69,24 +69,26 @@ public class TicTacToe {
             System.out.println("Hey there, lets play a fun tic tac toe game!!");
             System.out.println("Which symbol would you like use, X or O?");
             symbol = scanner.next().charAt(0);
-//            System.out.println(symbol);
 
-//            do {
-//                System.out.println("In correct, input. Please only enter 'X' or 'O'.");
-//                System.out.println("capital X or capital O");
-//            } while (!(symbol == 'X' || symbol == 'O'));
-
-
-            if (!(symbol == 'X' || symbol == 'O')){
+            do {
                 System.out.println("Incorrect input. Please only enter 'X' or 'O'.");
                 System.out.println("capital X or capital O");
+                symbol = scanner.next().charAt(0);
+            } while (!(symbol == 'X' || symbol == 'O'));
+
+            System.out.println("Nice, you have chosen to be " + symbol);
+
+            /*if (!(symbol == 'X' || symbol == 'O')){
+
+                do {
+                    System.out.println("In correct, input. Please only enter 'X' or 'O'.");
+                    System.out.println("capital X or capital O");
+                    symbol = scanner.next().charAt(0);
+                } while (!(symbol == 'X' || symbol == 'O'));
             }
             else{
                 System.out.println("Nice, you have chosen to be " + symbol);
-            }
-
-
-
+            }*/
 
             char turn = 'X';
 //            int currentTurn = 1;
