@@ -71,11 +71,15 @@ public class TicTacToe {
             symbol = scanner.next().charAt(0);
 //            System.out.println(symbol);
 
-            if (symbol != 'X' || symbol!= 'O'){
-                do {
-                    System.out.println("In correct, input. Please only enter 'X' or 'O'.");
-                    System.out.println("capital X or capital O");
-                } while (symbol != 'X' || symbol != 'O');
+//            do {
+//                System.out.println("In correct, input. Please only enter 'X' or 'O'.");
+//                System.out.println("capital X or capital O");
+//            } while (!(symbol == 'X' || symbol == 'O'));
+
+
+            if (!(symbol == 'X' || symbol == 'O')){
+                System.out.println("Incorrect input. Please only enter 'X' or 'O'.");
+                System.out.println("capital X or capital O");
             }
             else{
                 System.out.println("Nice, you have chosen to be " + symbol);
@@ -90,11 +94,11 @@ public class TicTacToe {
 //            char[] c = 'X' || 'O';
 //            for(){}
 
-            System.out.println(" 1 | 2 | 3 ");
-            System.out.println("---+---+---");
-            System.out.println(" 4 | 5 | 6 ");
-            System.out.println("---+---+---");
-            System.out.println(" 7 | 8 | 9 ");
+//            System.out.println(" 1 | 2 | 3 ");
+//            System.out.println("---+---+---");
+//            System.out.println(" 4 | 5 | 6 ");
+//            System.out.println("---+---+---");
+//            System.out.println(" 7 | 8 | 9 ");
 
 //            for (int i = 0; i < pos.length; i++){
 //                while(i < 9 ){
