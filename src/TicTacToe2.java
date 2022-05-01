@@ -35,6 +35,28 @@ public class TicTacToe2 {
             System.out.println("Nice, you have chosen to be " + player + ". You will be making the first move. \n");
         }
 
+
+        if( (pos[0] == 'X' && pos[1] == 'X' && pos[2] == 'X' ||
+                pos[3] == 'X' && pos[4] == 'X' && pos[5] == 'X' ||
+                pos[6] == 'X' && pos[7] == 'X' && pos[8] == 'X' ||
+                pos[0] == 'X' && pos[3] == 'X' && pos[6] == 'X' ||
+                pos[1] == 'X' && pos[4] == 'X' && pos[7] == 'X' ||
+                pos[2] == 'X' && pos[5] == 'X' && pos[8] == 'X' ||
+                pos[0] == 'X' && pos[4] == 'X' && pos[8] == 'X' ||
+                pos[2] == 'X' && pos[4] == 'X' && pos[6] == 'X'
+        ) ||
+                (pos[0] == 'O' && pos[1] == 'O' && pos[2] == 'O' ||
+                        pos[3] == 'O' && pos[4] == 'O' && pos[5] == 'O' ||
+                        pos[6] == 'O' && pos[7] == 'O' && pos[8] == 'O' ||
+                        pos[0] == 'O' && pos[3] == 'O' && pos[6] == 'O' ||
+                        pos[1] == 'O' && pos[4] == 'O' && pos[7] == 'O' ||
+                        pos[2] == 'O' && pos[5] == 'O' && pos[8] == 'O' ||
+                        pos[0] == 'O' && pos[4] == 'O' && pos[8] == 'O' ||
+                        pos[2] == 'O' && pos[4] == 'O' && pos[6] == 'O')
+        ) {
+            return pos = "w";
+        }
+
         System.out.println(" 1 | 2 | 3 ");
         System.out.println("---+---+---");
         System.out.println(" 4 | 5 | 6 ");
@@ -45,17 +67,14 @@ public class TicTacToe2 {
         for( char gamePiece: pos){
             if (!(gamePiece == 'X' || gamePiece =='O')){
                 do {
-                    System.out.println("Please refer to the board above and pick a number/position between 1 -9 and place your token");
-                    System.out.println("Player " + player + ", please make your move.");
+                    System.out.println("Player " + player + ",Please refer to the board above and pick a position between 1 -9 to place your token");
                     move = scanner.nextInt();
 
                     if (move < 1 || move > 9) {
                         System.out.println("Invalid input, please enter a number/position that is between 1-9");
                         move = scanner.nextInt();
                     }
-
                     pos[move-1] = player;
-
                     System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
                     System.out.println("---+---+---");
                     System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
@@ -69,22 +88,16 @@ public class TicTacToe2 {
                     }
                     gameTurn++;
                 }while(gameTurn<10);
+
+
+
+
             }
         }
         System.out.println("Bummer, it is a Draw Game. Good luck next round.");
 
-       /*for (int i = 0; i < pos.length; i++){
-                if (pos[0] == turn && pos[1] == turn && pos[2] == turn ||
-                        pos[3] == turn && pos[4] == turn && pos[5] == turn ||
-                        pos[6] == turn && pos[7] == turn && pos[8] == turn ||
-                        pos[0] == turn && pos[3] == turn && pos[6] == turn ||
-                        pos[1] == turn && pos[4] == turn && pos[7] == turn ||
-                        pos[2] == turn && pos[5] == turn && pos[8] == turn ||
-                        pos[0] == turn && pos[4] == turn && pos[8] == turn ||
-                        pos[2] == turn && pos[4] == turn && pos[6] == turn) {
-                }
-            }
-       }*/
+
+
     }
 
 }
