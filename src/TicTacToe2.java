@@ -43,16 +43,16 @@ public class TicTacToe2 {
 
         for( char gamePiece: pos){
             if (!(gamePiece == 'X' || gamePiece =='O')){
-
-                int turn=1;
-
-                if (turn % 2 != 0){
-                    move = player;
-                    turn ++;
-                }else if(turn % 2 == 0){
-                    move = 'O';
-                    turn ++;
-                }
+//
+//                int turn=1;
+//
+//                if (turn % 2 != 0){
+//                    move = player;
+//                    turn ++;
+//                }else if(turn % 2 == 0){
+//                    move = 'O';
+//                    turn ++;
+//                }
 
                 do {
                     System.out.println("Please refer to the board above and pick a number/position between 1 -9 and place your token");
@@ -70,7 +70,13 @@ public class TicTacToe2 {
                     System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
                     System.out.println("---+---+---");
                     System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
-//
+
+                    if (player == 'X'){
+                        player = 'O';
+                    }else if(player == 'O'){
+                        player='X';
+                    }
+
                 }while(true);
             }
         }
