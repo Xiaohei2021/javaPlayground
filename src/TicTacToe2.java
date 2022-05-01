@@ -10,6 +10,7 @@ public class TicTacToe2 {
         Scanner scanner = new Scanner(System.in);
         char player;
         int move;
+        int gameTurn =1;
         char[] pos = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 
         System.out.println("Hey there, lets play a fun tic tac toe game!!");
@@ -43,19 +44,9 @@ public class TicTacToe2 {
 
         for( char gamePiece: pos){
             if (!(gamePiece == 'X' || gamePiece =='O')){
-//
-//                int turn=1;
-//
-//                if (turn % 2 != 0){
-//                    move = player;
-//                    turn ++;
-//                }else if(turn % 2 == 0){
-//                    move = 'O';
-//                    turn ++;
-//                }
-
                 do {
                     System.out.println("Please refer to the board above and pick a number/position between 1 -9 and place your token");
+                    System.out.println("Player " + player + ", please make your move.");
                     move = scanner.nextInt();
 
                     if (move < 1 || move > 9) {
@@ -76,12 +67,11 @@ public class TicTacToe2 {
                     }else if(player == 'O'){
                         player='X';
                     }
-
-                }while(true);
+                    gameTurn++;
+                }while(gameTurn<10);
             }
         }
-
-        System.out.println("Dun Dun Dun, it is a Draw Game. Good luck next round.");
+        System.out.println("Bummer, it is a Draw Game. Good luck next round.");
 
        /*for (int i = 0; i < pos.length; i++){
                 if (pos[0] == turn && pos[1] == turn && pos[2] == turn ||
