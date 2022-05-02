@@ -16,12 +16,6 @@ public class TicTacToe2 {
         System.out.println("Hey there, lets play a fun tic tac toe game!!");
         System.out.println("Which symbol would you like use, X or O?");
         player = scanner.next().charAt(0);
-//        do {
-//            System.out.println("Incorrect input. Please only enter 'X' or 'O'.");
-//            System.out.println("capital X or capital O");
-//            symbol = scanner.next().charAt(0);
-//        } while (!(symbol == 'X' || symbol == 'O'));
-//        System.out.println("Nice, you have chosen to be " + symbol + ". You will be making the first move. \n");
 
         if (!(player == 'X' || player == 'O')){
             do {
@@ -35,28 +29,6 @@ public class TicTacToe2 {
             System.out.println("Nice, you have chosen to be " + player + ". You will be making the first move. \n");
         }
 
-
-        if( (pos[0] == 'X' && pos[1] == 'X' && pos[2] == 'X' ||
-                pos[3] == 'X' && pos[4] == 'X' && pos[5] == 'X' ||
-                pos[6] == 'X' && pos[7] == 'X' && pos[8] == 'X' ||
-                pos[0] == 'X' && pos[3] == 'X' && pos[6] == 'X' ||
-                pos[1] == 'X' && pos[4] == 'X' && pos[7] == 'X' ||
-                pos[2] == 'X' && pos[5] == 'X' && pos[8] == 'X' ||
-                pos[0] == 'X' && pos[4] == 'X' && pos[8] == 'X' ||
-                pos[2] == 'X' && pos[4] == 'X' && pos[6] == 'X'
-        ) ||
-                (pos[0] == 'O' && pos[1] == 'O' && pos[2] == 'O' ||
-                        pos[3] == 'O' && pos[4] == 'O' && pos[5] == 'O' ||
-                        pos[6] == 'O' && pos[7] == 'O' && pos[8] == 'O' ||
-                        pos[0] == 'O' && pos[3] == 'O' && pos[6] == 'O' ||
-                        pos[1] == 'O' && pos[4] == 'O' && pos[7] == 'O' ||
-                        pos[2] == 'O' && pos[5] == 'O' && pos[8] == 'O' ||
-                        pos[0] == 'O' && pos[4] == 'O' && pos[8] == 'O' ||
-                        pos[2] == 'O' && pos[4] == 'O' && pos[6] == 'O')
-        ) {
-            return pos = "w";
-        }
-
         System.out.println(" 1 | 2 | 3 ");
         System.out.println("---+---+---");
         System.out.println(" 4 | 5 | 6 ");
@@ -64,39 +36,44 @@ public class TicTacToe2 {
         System.out.println(" 7 | 8 | 9 ");
         System.out.println();
 
-        for( char gamePiece: pos){
-            if (!(gamePiece == 'X' || gamePiece =='O')){
-                do {
-                    System.out.println("Player " + player + ",Please refer to the board above and pick a position between 1 -9 to place your token");
-                    move = scanner.nextInt();
+        while(gameTurn<10) {
+            System.out.println("Player " + player + ",Please refer to the board above and pick a position between 1 -9 to place your token");
+            move = scanner.nextInt();
 
-                    if (move < 1 || move > 9) {
-                        System.out.println("Invalid input, please enter a number/position that is between 1-9");
-                        move = scanner.nextInt();
-                    }
-                    pos[move-1] = player;
-                    System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
-                    System.out.println("---+---+---");
-                    System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
-                    System.out.println("---+---+---");
-                    System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
-
-                    if (player == 'X'){
-                        player = 'O';
-                    }else if(player == 'O'){
-                        player='X';
-                    }
-                    gameTurn++;
-                }while(gameTurn<10);
-
-
-
-
+            if (move < 1 || move > 9) {
+                System.out.println("Invalid input, please enter a number/position that is between 1-9");
+                move = scanner.nextInt();
             }
+            pos[move-1] = player;
+            System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
+            System.out.println("---+---+---");
+            System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
+            System.out.println("---+---+---");
+            System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
+
+            if (pos[0] == player && pos[1] == player && pos[2] == player ||
+                    pos[3] == player && pos[4] == player && pos[5] == player ||
+                    pos[6] == player && pos[7] == player && pos[8] == player ||
+                    pos[0] == player && pos[3] == player && pos[6] == player ||
+                    pos[1] == player && pos[4] == player && pos[7] == player ||
+                    pos[2] == player && pos[5] == player && pos[8] == player ||
+                    pos[0] == player && pos[4] == player && pos[8] == player ||
+                    pos[2] == player && pos[4] == player && pos[6] == player
+            ) {
+                System.out.println("Congrats, Player " + player + " is the winner");
+                break;
+            }
+
+            if (player == 'X'){
+                player = 'O';
+            }else if(player == 'O'){
+                player='X';
+            }
+            gameTurn++;
+
         }
+
         System.out.println("Bummer, it is a Draw Game. Good luck next round.");
-
-
 
     }
 
