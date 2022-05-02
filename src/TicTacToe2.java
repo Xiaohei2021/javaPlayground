@@ -55,7 +55,6 @@ public class TicTacToe2 {
                 player = 'O';
             }else if(player == 'O'){
                 player='X';
-                gameTurn++;
             }
 
             System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
@@ -76,6 +75,9 @@ public class TicTacToe2 {
                 System.out.println("Congrats, Player " + player + " is the winner");
                 break;
             }
+
+            gameTurn++;
+
         }
         if (gameTurn >9) {
             System.out.println("Bummer, it is a Draw Game. Good luck next round.");
