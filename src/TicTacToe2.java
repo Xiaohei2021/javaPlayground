@@ -43,18 +43,19 @@ public class TicTacToe2 {
             if (move < 1 || move > 9) {
                 System.out.println("Invalid input, please enter a number/position that is between 1-9");
                 move = scanner.nextInt();
-            } else if (pos[move - 1] == 'X' || pos[move - 1] == 'O') {
+            }
+
+            while (pos[move - 1] == 'X' || pos[move - 1] == 'O') {
                 System.out.println("This position is already taken, please pick another");
                 move = scanner.nextInt();
-                System.out.println(gameTurn);
-            }else{
-                pos[move-1] = player;
-                if (player == 'X'){
-                    player = 'O';
-                }else if(player == 'O'){
-                    player='X';
-                    gameTurn++;
-                }
+            }
+
+            pos[move-1] = player;
+            if (player == 'X'){
+                player = 'O';
+            }else if(player == 'O'){
+                player='X';
+                gameTurn++;
             }
 
             System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
@@ -75,9 +76,6 @@ public class TicTacToe2 {
                 System.out.println("Congrats, Player " + player + " is the winner");
                 break;
             }
-
-
-
         }
         if (gameTurn >9) {
             System.out.println("Bummer, it is a Draw Game. Good luck next round.");
