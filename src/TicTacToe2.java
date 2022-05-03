@@ -51,17 +51,6 @@ public class TicTacToe2 {
             }
 
             pos[move-1] = player;
-            if (player == 'X'){
-                player = 'O';
-            }else if(player == 'O'){
-                player='X';
-            }
-
-            System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
-            System.out.println("---+---+---");
-            System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
-            System.out.println("---+---+---");
-            System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
 
             if (pos[0] == player && pos[1] == player && pos[2] == player ||
                     pos[3] == player && pos[4] == player && pos[5] == player ||
@@ -75,9 +64,19 @@ public class TicTacToe2 {
                 System.out.println("Congrats, Player " + player + " is the winner");
                 break;
             }
-
             gameTurn++;
 
+            System.out.println(" " + pos[0] + " | " + pos[1] + " | " + pos[2] + " ");
+            System.out.println("---+---+---");
+            System.out.println(" " + pos[3] + " | " + pos[4] + " | " + pos[5] + " ");
+            System.out.println("---+---+---");
+            System.out.println(" " + pos[6] + " | " + pos[7] + " | " + pos[8] + " ");
+
+            if (player == 'X'){
+                player = 'O';
+            }else if(player == 'O'){
+                player='X';
+            }
         }
         if (gameTurn >9) {
             System.out.println("Bummer, it is a Draw Game. Good luck next round.");
