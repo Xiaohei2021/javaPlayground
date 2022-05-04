@@ -21,7 +21,15 @@ public class MenuPlayground1 {
 
             if (option == 1 ){
                 for (int i= 0; i < guests.length; i++){
-                    System.out.println(guests[i]);
+//                    if(guests[i] == null){
+//                        guests[i]= "--";
+//                        System.out.println(guests[i]);
+//                    }
+//                    else{
+//                        System.out.println(guests[i]);
+//                    }
+                    System.out.println(guests[i] == null? "--": guests[i]);
+
                 }
             } else if (option == 2) {
                 for(int i=0; i< guests.length; i++){
@@ -38,6 +46,7 @@ public class MenuPlayground1 {
                 for (int i =0; i < guests.length; i++){
                     if(guests[i] != null&& guests[i].equals(name)) {
                         guests[i] = null;
+                        System.out.println(name + " has been removed from the list.");
                         break;
                     }
                 }
