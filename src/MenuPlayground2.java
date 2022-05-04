@@ -31,8 +31,17 @@ public class MenuPlayground2 {
                         break;
                     }
                 }
-
-            } else if (option == 3) {
+                String[] temp = new String[guests.length];
+                int ti = 0;
+                for(int i=0; i< guests.length; i++) {
+                    if (guests[i] != null){
+                        temp[ti] = guests[i];
+                        ti++;
+                    }
+                }
+                guests = temp;
+            }
+            else if (option == 3) {
                 break;
             }
         }while(true);
