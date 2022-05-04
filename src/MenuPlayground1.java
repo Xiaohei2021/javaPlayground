@@ -2,36 +2,53 @@ import java.util.Scanner;
 
 public class MenuPlayground1 {
 
-    public static void main(String[] args){
-        String [] guests = new String[10];
+    static String [] guests = new String[10];
+    static Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args){
 
         do{
-            System.out.println();
-            System.out.println("1 - Display All Guests");
-            System.out.println("2 - Add Guest");
-            System.out.println("3 - Remove Guest");
-            System.out.println("4 - Exit");
-            System.out.print("option: ");
-            System.out.println();
+            displayGuests();
+            displayMenu();
+            int option = getOptions();
 
+//            System.out.println("-------------------------------\n - Guests -\n");
+//            for (int i= 0; i < guests.length; i++) {
+//                System.out.println(guests[i] == null ? "--" : guests[i]);
+//            }
 
-            int option = scanner.nextInt();
+//            System.out.println("-------------------------------\n - Menu -\n");
+//            System.out.println();
+////            System.out.println("1 - Display All Guests");
+//            System.out.println("1 - Add Guest");
+//            System.out.println("2 - Remove Guest");
+//            System.out.println("3 - Exit");
+//            System.out.print("option: ");
+//            int option = scanner.nextInt();
+//            System.out.println();
+//            System.out.println();
 
-            if (option == 1 ){
-                for (int i= 0; i < guests.length; i++){
-//                    if(guests[i] == null){
-//                        guests[i]= "--";
-//                        System.out.println(guests[i]);
-//                    }
-//                    else{
-//                        System.out.println(guests[i]);
-//                    }
-                    System.out.println(guests[i] == null? "--": guests[i]);
+//            System.out.print("option: ");
+//            int option = scanner.nextInt();
+//            System.out.println();
+//            System.out.println();
 
-                }
-            } else if (option == 2) {
+//            if (option == 1 ){
+//                System.out.println("-------------------------------\n - Guests -\n");
+//
+//                for (int i= 0; i < guests.length; i++){
+////                    if(guests[i] == null){
+////                        guests[i]= "--";
+////                        System.out.println(guests[i]);
+////                    }
+////                    else{
+////                        System.out.println(guests[i]);
+////                    }
+//                    System.out.println(guests[i] == null? "--": guests[i]);
+//
+//                }
+//            }
+             if (option == 1) {
                 for(int i=0; i< guests.length; i++){
                     if(guests[i] == null){
                         System.out.println("Please Enter Name of the guest to be added:");
@@ -40,7 +57,7 @@ public class MenuPlayground1 {
                     }
                 }
 
-            } else if (option== 3) {
+            } else if (option== 2) {
                 System.out.println("Which guest would you like to remove from the list? ");
                 String name = scanner.next();
                 for (int i =0; i < guests.length; i++){
@@ -51,14 +68,37 @@ public class MenuPlayground1 {
                     }
                 }
 
-            } else if (option == 4) {
+            } else if (option == 3) {
                 break;
             }
         }while(true);
 
         System.out.println("");
         System.out.println("Exited");
+    }
 
+     static void displayGuests(){
+         System.out.println("-------------------------------\n - Guests -\n");
+         for (int i= 0; i < guests.length; i++) {
+             System.out.println(guests[i] == null ? "--" : guests[i]);
+         }
+    }
+
+    static void displayMenu(){
+        System.out.println("-------------------------------\n - Menu -\n");
+        System.out.println();
+//            System.out.println("1 - Display All Guests");
+        System.out.println("1 - Add Guest");
+        System.out.println("2 - Remove Guest");
+        System.out.println("3 - Exit");
+    }
+
+    static int getOptions(){
+        System.out.print("option: ");
+        int option = scanner.nextInt();
+        System.out.println();
+        System.out.println();
+        return option;
     }
 
 }
