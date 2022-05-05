@@ -7,16 +7,7 @@ public class MenuPlayground2 {
 
     public static void main(String[] args){
 
-//        guests[0]="Jackie";
-//        guests[1]="Fred";
-//        guests[2]="Alice";
-//        guests[3]="Sarah";
-//        guests[4]="Dexter";
-//        guests[5]="Bob";
-//        guests[6]="Thomas";
-//        guests[7]="Jake";
-//        guests[8]="Sam";
-
+        insertTestNames();
 
         do{
             displayGuests();
@@ -24,33 +15,10 @@ public class MenuPlayground2 {
             int option = getOptions();
 
             if (option == 1) {
-                for(int i=0; i< guests.length; i++){
-                    if(guests[i] == null){
-                        System.out.println("Please Enter Name of the guest to be added:");
-                        guests[i] = scanner.next();
-                        break;
-                    }
-                }
-
-            } else if (option== 2) {
-                System.out.println("Which guest would you like to remove from the list? ");
-                String name = scanner.next();
-                for (int i =0; i < guests.length; i++){
-                    if(guests[i] != null&& guests[i].equals(name)) {
-                        guests[i] = null;
-                        System.out.println(name + " has been removed from the list.");
-                        break;
-                    }
-                }
-                String[] temp = new String[guests.length];
-                int ti = 0;
-                for(int i=0; i< guests.length; i++) {
-                    if (guests[i] != null){
-                        temp[ti] = guests[i];
-                        ti++;
-                    }
-                }
-                guests = temp;
+               addGuest();
+            }
+            else if (option== 2) {
+                removeGuest();
             }
             else if (option == 3) {
                 break;
@@ -91,6 +59,49 @@ public class MenuPlayground2 {
         System.out.println();
         System.out.println();
         return option;
+    }
+
+    static void addGuest(){
+        for(int i=0; i< guests.length; i++){
+            if(guests[i] == null){
+                System.out.println("Please Enter Name of the guest to be added:");
+                guests[i] = scanner.next();
+                break;
+            }
+        }
+    }
+
+    static void removeGuest(){
+        System.out.println("Which guest would you like to remove from the list? ");
+        String name = scanner.next();
+        for (int i =0; i < guests.length; i++){
+            if(guests[i] != null&& guests[i].equals(name)) {
+                guests[i] = null;
+                System.out.println(name + " has been removed from the list.");
+                break;
+            }
+        }
+        String[] temp = new String[guests.length];
+        int ti = 0;
+        for(int i=0; i< guests.length; i++) {
+            if (guests[i] != null){
+                temp[ti] = guests[i];
+                ti++;
+            }
+        }
+        guests = temp;
+    }
+
+    static void insertTestNames(){
+        guests[0]="Jackie";
+        guests[1]="Fred";
+        guests[2]="Alice";
+        guests[3]="Sarah";
+        guests[4]="Dexter";
+        guests[5]="Bob";
+        guests[6]="Thomas";
+        guests[7]="Jake";
+        guests[8]="Sam";
     }
 
 }
