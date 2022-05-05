@@ -73,14 +73,26 @@ public class MenuPlayground2 {
 
     static void removeGuest(){
         System.out.println("Which guest would you like to remove from the list? ");
-        String name = scanner.next();
+//        String name = scanner.next();
+        int guestNumb = scanner.nextInt();
+        do{
+            System.out.println("Error: There is no gues with that number");
+        }while(guestNumb <= guests.length && guestNumb >= 1 && guests[guestNumb-1] != null);
+
+        guests[guestNumb-1] = null;
+
         for (int i =0; i < guests.length; i++){
-            if(guests[i] != null&& guests[i].equals(name)) {
-                guests[i] = null;
-                System.out.println(name + " has been removed from the list.");
-                break;
-            }
+//            if(guests[i] != null && guests[i].equals(name)) {
+//                guests[i] = null;
+//                System.out.println(name + " has been removed from the list.");
+//                break;
+//            }
+//            if(i+1 == guestNumb) {
+//                guests[i] = null;
+//                break;
+//            }
         }
+
         String[] temp = new String[guests.length];
         int ti = 0;
         for(int i=0; i< guests.length; i++) {
