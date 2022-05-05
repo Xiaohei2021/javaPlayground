@@ -7,6 +7,17 @@ public class MenuPlayground2 {
 
     public static void main(String[] args){
 
+//        guests[0]="Jackie";
+//        guests[1]="Fred";
+//        guests[2]="Alice";
+//        guests[3]="Sarah";
+//        guests[4]="Dexter";
+//        guests[5]="Bob";
+//        guests[6]="Thomas";
+//        guests[7]="Jake";
+//        guests[8]="Sam";
+
+
         do{
             displayGuests();
             displayMenu();
@@ -52,9 +63,16 @@ public class MenuPlayground2 {
 
     static void displayGuests(){
         System.out.println("-------------------------------\n - Guests -\n");
+        boolean isEmpty = true;
         for (int i= 0; i < guests.length; i++) {
 //             System.out.println(guests[i] == null ? i+1 + ". --" : i+1 + ". "+guests[i]);
-            System.out.println( (i+1 )+". " +( guests[i] == null ?"--" : guests[i]));
+            if (guests[i] != null){
+                System.out.println( (i+1 )+". " +( guests[i]));
+                isEmpty = false;
+            }
+        }
+        if(isEmpty){
+            System.out.println("Guest List is empty.");
         }
     }
 
