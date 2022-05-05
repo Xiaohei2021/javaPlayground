@@ -21,6 +21,12 @@ public class MenuPlayground2 {
                 removeGuest();
             }
             else if (option == 3) {
+                editGuest();
+            }
+            else if (option == 4) {
+                insertGuest();
+            }
+            else if (option == 5) {
                 break;
             }
         }while(true);
@@ -50,12 +56,15 @@ public class MenuPlayground2 {
 //            System.out.println("1 - Display All Guests");
         System.out.println("1 - Add Guest");
         System.out.println("2 - Remove Guest");
-        System.out.println("3 - Exit");
+        System.out.println("3 - Edit Guest");
+        System.out.println("4 - Insert Guest");
+        System.out.println("5 - Exit");
     }
 
     static int getOptions(){
         System.out.print("option: ");
         int option = scanner.nextInt();
+        scanner.nextLine();
         System.out.println();
         System.out.println();
         return option;
@@ -65,7 +74,7 @@ public class MenuPlayground2 {
         for(int i=0; i< guests.length; i++){
             if(guests[i] == null){
                 System.out.println("Please Enter Name of the guest to be added:");
-                guests[i] = scanner.next();
+                guests[i] = scanner.nextLine();
                 break;
             }
         }
@@ -103,6 +112,43 @@ public class MenuPlayground2 {
         }
         guests = temp;
     }
+
+    static void editGuest(){
+        System.out.println("Please enter the Guest number you wish to edit");
+        int guestNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        do{
+            System.out.println("Error: There is no gues with that number");
+        }while(guestNumber <= guests.length && guestNumber >= 1 && guests[guestNumber-1] != null);
+
+        System.out.println("Please enter the new guest's name");
+        String newGuest = scanner.nextLine();
+
+        guests[guestNumber-1] = newGuest;
+
+    }
+
+    static void insertGuest(){
+        System.out.println("Please enter the number you wish to insert the guest to");
+        int guestNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        do{
+            System.out.println("Error: There is no guest with that number, Please enter the number slot to insert the guest");
+            scanner.nextInt();
+            scanner.nextLine();
+        }while(guestNumber >= guests.length && guestNumber < 0 && guests[guestNumber-1] == null);
+
+        for(int i = guests.length -1; i> guestNumber-1;i--){
+            guests[i] = guests[i-1];
+        }
+        System.out.println("Please enter the new guest's name");
+        String newGuest = scanner.nextLine();
+
+        guests[guestNumber-1] = newGuest;
+    }
+
 
     static void insertTestNames(){
         guests[0]="Jackie";
