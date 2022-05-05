@@ -134,19 +134,20 @@ public class MenuPlayground2 {
         int guestNumber = scanner.nextInt();
         scanner.nextLine();
 
-        do{
-            System.out.println("Error: There is no guest with that number, Please enter the number slot to insert the guest");
-            scanner.nextInt();
-            scanner.nextLine();
-        }while(guestNumber >= guests.length && guestNumber < 0 && guests[guestNumber-1] == null);
+        if (guestNumber >= 1 && guestNumber <= guests.length && guests[guestNumber-1] != null) {
+            System.out.println("Please enter the new guest's name");
+            String newGuest = scanner.nextLine();
 
-        for(int i = guests.length -1; i> guestNumber-1;i--){
-            guests[i] = guests[i-1];
+            for(int i = guests.length -1; i> guestNumber-1;i--){
+                guests[i] = guests[i-1];
+            }
+            guests[guestNumber-1] = newGuest;
+
+        }else{
+            System.out.println("\nError: There is no guest with that number.");
         }
-        System.out.println("Please enter the new guest's name");
-        String newGuest = scanner.nextLine();
 
-        guests[guestNumber-1] = newGuest;
+
     }
 
 
