@@ -1,43 +1,31 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-//    int x = 20/(4-2);
-//
-//    System.out.println(x+9);
+    public static void main(String[] args){
+        Student std1 = new Student();
+        Student std2 = new Student();
+        Student std3 = new Student();
 
-//        int x =  3;
-//        int y = 6;
-//
-//        x = x+y*2+x;
-//        System.out.println(x);
+        std1.name = "Joe";
+        std1.age = 12;
+        std1.grade = "8th Grade";
 
-        System.out.println("What is your Name");
-        Scanner scanner = new Scanner(System.in);
-        String userName = scanner.next();
-        System.out.println(userName + " is a noob");
+        std2.name = "Alice";
+        std2.age = 16;
+        std2.grade = "10th Grade";
 
+        std3.name = "Sarah";
+        std3.age = 8;
+        std3.grade = "3rd Grade";
 
-        System.out.println("\nHow old are you?");
-        int userAge = scanner.nextInt();
-        System.out.println("Your Name  is " +  userName + " and your age is " + userAge + " years old!");
-
-        System.out.println("\nHow tall are you in meters?");
-        double userHeight= scanner.nextDouble();
-        System.out.println("You are "+ userHeight + " meters tall.");
-
-//        System.out.println(4.5-2.7);
-//        System.out.print("Hello Peeps");
-//        System.out.format("I have %d peach, %d blueBerry, %d apple, and 2 %s", 2, 10, 1, "banana");
-//        System.out.format("\nI have %.1f pie", 4.5);
-//        System.out.format("\n when formatted: %.1f", 4.5-2.7);
-
-//        double averageMaleHeightDifference = userHeight -1.75;
-//        double averageFemaleHeightDifference = userHeight -1.62;
-//        System.out.println("\nThe difference between your height and teh average is: ");
-//        System.out.format( "\n%.2f m if you are male.",averageMaleHeightDifference);
-//        System.out.format( "\n%.2f m if you are female.",averageFemaleHeightDifference);
-
-
+        bar(std2);
+        bar(std1);
+        bar(std3);
     }
+
+    static void bar(Student std){
+        System.out.println(std.name + " is a student at Robert Frost middle school. The student is " + std.age + " years old and is in "+ std.grade );
+    }
+
+
 }
