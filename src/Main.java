@@ -1,3 +1,5 @@
+import org.w3c.dom.css.Rect;
+
 import java.util.Scanner;
 
 public class Main {
@@ -48,7 +50,7 @@ public class Main {
         }
     }*/
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Rectangle rect1 = new Rectangle();
         rect1.setHeight(5);
         rect1.setWidth(9);
@@ -63,6 +65,17 @@ public class Main {
         System.out.println("rect1 Height:" + rect1.getHeight());
         System.out.println("The area of the rectangle is:" + rect1.getArea());
         System.out.println("The perimeter of the rectangle is:" + rect1.getPerimeter());
+
+
+    }*/
+
+    public static void main(String[] args) {
+        Rectangle rect1 = new Rectangle(7,9);
+
+        Rectangle rect2 = new Rectangle(8,4);
+
+        System.out.println("rect1 Height: " + rect1.getHeight() + ", "+ "rect1 Width:" + rect1.getWidth() );
+        System.out.println("rect2 Height: " + rect2.getHeight() + ", "+ "rect2 Width:" + rect2.getWidth() );
 
 
     }
