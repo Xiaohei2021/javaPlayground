@@ -27,7 +27,7 @@ public class Main {
         System.out.println(std.name + " is a student at Robert Frost middle school. The student is " + std.age + " years old and is in "+ std.grade );
     }*/
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         Door driverDoor = new Door();
         driverDoor.open();
         driverDoor.name = "Drivers";
@@ -45,8 +45,26 @@ public class Main {
         }
         else{
             System.out.println("Driver's Door is Closed");
-        }*/
-    }
+        }
+    }*/
 
+    public static void main(String[] args) {
+        Rectangle rect1 = new Rectangle();
+        rect1.setHeight(5);
+        rect1.setWidth(9);
+//        rect1.setHeight(2);
+//        rect1.setWidth(5);
+
+
+        Rectangle rect2 = new Rectangle();
+        rect2.setHeight(8);
+        rect2.setWidth(4);
+
+        System.out.println("rect1 Height:" + rect1.getHeight());
+        System.out.println("The area of the rectangle is:" + rect1.getArea());
+        System.out.println("The perimeter of the rectangle is:" + rect1.getPerimeter());
+
+
+    }
 
 }
