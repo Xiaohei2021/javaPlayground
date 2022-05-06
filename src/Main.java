@@ -30,13 +30,22 @@ public class Main {
     public static void main(String[] args){
         Door driverDoor = new Door();
         driverDoor.open();
+        driverDoor.name = "Drivers";
+        driverDoor.printStatus();
 
-        if (driverDoor.isOpen){
+        Door passDoor = new Door();
+        passDoor.name = "Passenders";
+        passDoor.open();
+        passDoor.printStatus();
+        driverDoor.close();
+        driverDoor.printStatus();
+
+        /*if (driverDoor.isOpen){
             System.out.println("Driver's Door is open");
         }
         else{
             System.out.println("Driver's Door is Closed");
-        }
+        }*/
     }
 
 
