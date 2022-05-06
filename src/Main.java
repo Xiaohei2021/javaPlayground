@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         Student std1 = new Student();
         Student std2 = new Student();
         Student std3 = new Student();
@@ -25,6 +25,18 @@ public class Main {
 
     static void bar(Student std){
         System.out.println(std.name + " is a student at Robert Frost middle school. The student is " + std.age + " years old and is in "+ std.grade );
+    }*/
+
+    public static void main(String[] args){
+        Door driverDoor = new Door();
+        driverDoor.open();
+
+        if (driverDoor.isOpen){
+            System.out.println("Driver's Door is open");
+        }
+        else{
+            System.out.println("Driver's Door is Closed");
+        }
     }
 
 
