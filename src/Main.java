@@ -1,5 +1,7 @@
 import org.w3c.dom.css.Rect;
 
+import javax.swing.text.Style;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -69,7 +71,7 @@ public class Main {
 
     }*/
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Rectangle rect1 = new Rectangle(7,9);
 
         Rectangle rect2 = new Rectangle(8,4);
@@ -77,6 +79,26 @@ public class Main {
         System.out.println("rect1 Height: " + rect1.getHeight() + ", "+ "rect1 Width:" + rect1.getWidth() );
         System.out.println("rect2 Height: " + rect2.getHeight() + ", "+ "rect2 Width:" + rect2.getWidth() );
 
+
+    }*/
+    public static void main(String[] args) {
+        String[] sa = new String[5];
+
+        sa[0]="toaster";
+        sa[1]="fridge";
+        sa[2]="kettle";
+        System.out.println(sa[2]);
+
+        ArrayList<String> sal = new ArrayList<>();
+        sal.add("toaster");
+        sal.add("fridge");
+        sal.add("kettle");
+        sal.indexOf("kettle");
+        sal.contains("fridge");
+        System.out.println(sal.get(1));
+        sal.set(1, "microwave");
+        System.out.println(sal.size());
+        sal.clear();
 
     }
 
