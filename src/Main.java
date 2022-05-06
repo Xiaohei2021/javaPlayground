@@ -81,7 +81,7 @@ public class Main {
 
 
     }*/
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String[] sa = new String[5];
 
         sa[0]="toaster";
@@ -99,6 +99,24 @@ public class Main {
         sal.set(1, "microwave");
         System.out.println(sal.size());
         sal.clear();
+
+    }*/
+
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setName("Joe Bloggs");
+        student.setDateOfBirth("12/06/1990");
+        student.setStudentHousing(true);
+        student.course = new Course();
+        student.course.title = "computer Science";
+        student.course.level = "undergraduate";
+        student.course.startDate="02/15/2023";
+
+        System.out.println("Student Name: " + student.getName());
+        System.out.println("Student DOB: " + student.getDateOfBirth());
+        System.out.println("Has Housing: " + (student.getStudentHousing() ?"Yes": "NO"));
+        System.out.println("The Student: " + student.getName() + " is a" + student.course.level+ "and is enrolled in the " + student.course.title + " major that is staring on "+ student.course.startDate );
+
 
     }
 
