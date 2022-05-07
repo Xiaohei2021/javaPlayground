@@ -107,15 +107,15 @@ public class Main {
         student.setName("Joe Bloggs");
         student.setDateOfBirth("12/06/1990");
         student.setStudentHousing(true);
-        student.course = new Course();
-        student.course.title = "computer Science";
-        student.course.level = "undergraduate";
-        student.course.startDate="02/15/2023";
+        student.setCourse (new Course());
+        student.getCourse().setTitle("computer Science")  ;
+        student.getCourse().setLevel("undergraduate")  ;
+        student.getCourse().setStartDate("02/15/2023");
 
         System.out.println("Student Name: " + student.getName());
         System.out.println("Student DOB: " + student.getDateOfBirth());
         System.out.println("Has Housing: " + (student.getStudentHousing() ?"Yes": "NO"));
-        System.out.println("The Student: " + student.getName() + " is a" + student.course.level+ "and is enrolled in the " + student.course.title + " major that is staring on "+ student.course.startDate );
+        System.out.println("The Student: " + student.getName() + " is a" + student.getCourse().getLevel() + "and is enrolled in the " + student.getCourse().getTitle() + " major that is staring on "+ student.getCourse().getStartDate());
 
 
     }

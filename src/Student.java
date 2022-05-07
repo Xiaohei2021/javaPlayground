@@ -7,7 +7,7 @@ public class Student {
     private String dateOfBirth;
     private Boolean hasStudentHousing;
 
-    public Course course;
+    private Course course;
 
     public void setName(String name){
         this.name = name;
@@ -31,5 +31,13 @@ public class Student {
 
     public void setStudentHousing(Boolean hasStudentHousing) {
         this.hasStudentHousing = hasStudentHousing;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Course getCourse(){
+        return course;
     }
 }

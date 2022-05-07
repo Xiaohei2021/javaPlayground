@@ -138,7 +138,7 @@ public class MenuPlayground2 {
             System.out.println("Please enter the new guest's name");
             String newGuest = scanner.nextLine();
 
-            for(int i = guests.length -1; i> guestNumber-1;i--){
+            for(int i = guests.length -1; i > guestNumber-1; i--){
                 guests[i] = guests[i-1];
             }
             guests[guestNumber-1] = newGuest;
