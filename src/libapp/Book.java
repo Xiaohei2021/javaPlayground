@@ -16,5 +16,7 @@ public class Book {
         this.author = author;
         System.out.println("Hello world!");
 
+        System.out.println("Hello world!");
+
     }
 }
