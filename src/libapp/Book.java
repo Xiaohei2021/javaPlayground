@@ -14,5 +14,7 @@ public class Book {
         this.genre = genre;
         this.description = description;
         this.author = author;
+        System.out.println("Hello world!");
+
     }
 }
